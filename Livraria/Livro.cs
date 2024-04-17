@@ -104,7 +104,7 @@ namespace Livraria
 
         }// Fim do Void
 
-        public string ConsultarEstoque(long codigo)
+        public string ConsultarReposicao(long codigo)
         {
             string consulta = "";
             if (ModificarCodigo == codigo)

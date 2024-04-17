@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compra.cs" />
+    <Compile Include="ControlCompra.cs" />
     <Compile Include="ControlLivro.cs" />
     <Compile Include="ControlPessoa.cs" />
     <Compile Include="ControlReserva.cs" />

@@ -24,16 +24,16 @@ namespace Livraria
         public void menu()
         {
             Console.WriteLine("Menu - Pessoa" +
-                "\nEscolha uma das opções abaixo: " +
-                "\n1. Cadastrar Pessoa" +
-                "\n2. Consultar Pessoa" +
-                "\n3. Atualizar Nome" +
-                "\n4. Atualizar Telefone" +
-                "\n5. Atualizar Endereço" +
-                "\n6. Atualizar Data de Nascimento" +
-                "\n7. Atualizar Senha" +
-                "\n8. Atualizar Situação" +
-                "\n9. Excluir");
+                "Escolha uma das opções abaixo: " +
+                "\n0. Cadastrar Pessoa" +
+                "\n1. Consultar Pessoa" +
+                "\n2. Atualizar Nome" +
+                "\n3. Atualizar Telefone" +
+                "\n4. Atualizar Endereço" +
+                "\n5. Atualizar Data de Nascimento" +
+                "\n6. Atualizar Senha" +
+                "\n7. Atualizar Situação" +
+                "\n8. Excluir");
             ModificarOpcao = Convert.ToInt32(Console.ReadLine());
         }//fim do menu
 
@@ -43,7 +43,7 @@ namespace Livraria
             switch (ModificarOpcao)
             {
 
-                case 1:
+                case 0:
                     Console.WriteLine("Informe o CPF: ");
                     long CPF = Convert.ToInt64(Console.ReadLine());
 
@@ -57,7 +57,7 @@ namespace Livraria
                     string endereco = Console.ReadLine();
 
                     Console.WriteLine("Informe sua data de nascimento: ");
-                    DateTime data = Convert.ToDateTime(Console.ReadLine());
+                    DateTime dtNascimento = Convert.ToDateTime(Console.ReadLine());
 
                     Console.WriteLine("Informe seu Login: ");
                     string login = Console.ReadLine();
@@ -69,10 +69,10 @@ namespace Livraria
                     string cargo = Console.ReadLine();
 
                     //Chamar o método cadastrar
-                    model.Cadastrar(CPF, nome, telefone, endereco, data, login, senha, cargo);
+                    model.Cadastrar(CPF, nome, telefone, endereco, dtNascimento, login, senha, cargo);
                     break;
 
-                case 2:
+                case 1:
                     Console.WriteLine("Informe o CPF que deseja consultar: ");
                     CPF = Convert.ToInt64(Console.ReadLine());
 
@@ -80,7 +80,7 @@ namespace Livraria
                     Console.WriteLine(model.ConsultarIndividual(CPF));
                     break;
 
-                case 3:
+                case 2:
                     Console.WriteLine("Informe o CPF: ");
                     CPF = Convert.ToInt64(Console.ReadLine());
 
@@ -92,7 +92,7 @@ namespace Livraria
 
                     break;
 
-                case 4:
+                case 3:
                     Console.WriteLine("Informe o CPF: ");
                     CPF = Convert.ToInt64(Console.ReadLine());
 
@@ -103,7 +103,7 @@ namespace Livraria
                     model.AtualizarNome(CPF, telefone);
                     break;
 
-                case 5:
+                case 4:
                     Console.WriteLine("Informe um CPF: ");
                     CPF = Convert.ToInt64(Console.ReadLine());
 
@@ -114,19 +114,19 @@ namespace Livraria
                     model.AtualizarNome(CPF, endereco);
                     break;
 
-                case 6:
+                case 5:
                     Console.WriteLine("Informe um CPF: ");
                     CPF = Convert.ToInt64(Console.ReadLine());
 
                     Console.WriteLine("Informe uma nova data de nascimento: ");
-                    data = Convert.ToDateTime(Console.ReadLine());
+                    dtNascimento = Convert.ToDateTime(Console.ReadLine());
 
                     //Atualizar
-                    model.AtualizarDataNascimento(CPF, data);
+                    model.AtualizarDataNascimento(CPF, dtNascimento);
                     break;
 
 
-                case 7:
+                case 6:
                     Console.WriteLine("Informe um CPF: ");
                     CPF = Convert.ToInt64(Console.ReadLine());
 
@@ -138,7 +138,7 @@ namespace Livraria
 
                     break;
 
-                case 8:
+                case 7:
                     Console.WriteLine("Informe um CPF: ");
                     CPF = Convert.ToInt64(Console.ReadLine());
 
@@ -149,7 +149,7 @@ namespace Livraria
                     model.AtualizarPosicao(CPF, cargo);
                     break;
 
-                case 9:
+                case 8:
                     Console.WriteLine("Informe um CPF: ");
                     CPF = Convert.ToInt64(Console.ReadLine());
 

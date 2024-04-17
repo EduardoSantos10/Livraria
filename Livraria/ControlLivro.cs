@@ -25,15 +25,15 @@ namespace Livraria
         {
             Console.WriteLine("Menu - Livro" +
                 "\nEscolha uma das opções abaixo: " +
-                "\n1. Cadastrar Código" +
-                "\n2. Consultar Titulo" +
-                "\n3. Atualizar Autor" +
-                "\n4. Atualizar Editora" +
-                "\n5. Atualizar Genero" +
-                "\n6. Atualizar ISBN" +
-                "\n7. Atualizar Quantidade" +
-                "\n8. Atualizar Preço" +
-                "\n9. Excluir");
+                "\n0. Cadastrar Código" +
+                "\n1. Consultar Titulo" +
+                "\n2. Atualizar Autor" +
+                "\n3. Atualizar Editora" +
+                "\n4. Atualizar Genero" +
+                "\n5. Atualizar ISBN" +
+                "\n6. Atualizar Quantidade" +
+                "\n7. Atualizar Preço" +
+                "\n8. Excluir");
             ModificarOpcao = Convert.ToInt32(Console.ReadLine());
         }//fim do menu
 
@@ -43,7 +43,7 @@ namespace Livraria
             switch (ModificarOpcao)
             {
 
-                case 1:
+                case 0:
                     Console.WriteLine("Informe o Código: ");
                     long codigo = Convert.ToInt64(Console.ReadLine());
 
@@ -72,15 +72,15 @@ namespace Livraria
                     model.Cadastrar(codigo, titulo, autor, editora, genero, ISBN, quantidade, preco);
                     break;
 
-                case 2:
+                case 1:
                     Console.WriteLine("Informe o codigo que deseja consultar: ");
                     codigo = Convert.ToInt64(Console.ReadLine());
 
                     //Mostrar os dados
-                    Console.WriteLine(model.ConsultarEstoque(codigo));
+                    Console.WriteLine(model.ConsultarReposicao(codigo));
                     break;
 
-                case 3:
+                case 2:
                     Console.WriteLine("Informe o código: ");
                     codigo = Convert.ToInt64(Console.ReadLine());
 
@@ -92,7 +92,7 @@ namespace Livraria
 
                     break;
 
-                case 4:
+                case 3:
                     Console.WriteLine("Informe o código: ");
                     codigo = Convert.ToInt64(Console.ReadLine());
 
@@ -104,7 +104,7 @@ namespace Livraria
 
                     break;
 
-                case 5:
+                case 4:
                     Console.WriteLine("Informe o código: ");
                     codigo = Convert.ToInt64(Console.ReadLine());
 
@@ -115,7 +115,7 @@ namespace Livraria
                     model.AtualizarEditora(codigo, editora);
                     break;
 
-                case 6:
+                case 5:
                     Console.WriteLine("Informe um código: ");
                     codigo = Convert.ToInt64(Console.ReadLine());
 
@@ -126,7 +126,7 @@ namespace Livraria
                     model.AtualizarGenero(codigo, genero);
                     break;
 
-                case 7:
+                case 6:
                     Console.WriteLine("Informe um código: ");
                     codigo = Convert.ToInt64(Console.ReadLine());
 
@@ -138,7 +138,7 @@ namespace Livraria
                     break;
 
 
-                case 8:
+                case 7:
                     Console.WriteLine("Informe um código: ");
                     codigo = Convert.ToInt64(Console.ReadLine());
 
@@ -150,18 +150,18 @@ namespace Livraria
 
                     break;
 
-                case 9:
+                case 8:
                     Console.WriteLine("Informe um código: ");
                     codigo = Convert.ToInt64(Console.ReadLine());
 
-                    Console.WriteLine("Informe uma posição: ");
+                    Console.WriteLine("Informe o preco: ");
                     preco = Console.ReadLine();
 
                     //Atualizar
                     model.AtualizarPreco(codigo, preco);
                     break;
 
-                case 10:
+                case 9:
                     Console.WriteLine("Informe um CPF: ");
                     codigo = Convert.ToInt64(Console.ReadLine());
 

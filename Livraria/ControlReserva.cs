@@ -26,11 +26,11 @@ namespace Livraria
         {
             Console.WriteLine("Menu - Livro" +
                 "\nEscolha uma das opções abaixo: " +
-                "\n1. Cadastrar Código" +
-                "\n2. Consultar Livro" +
-                "\n3. Atualizar Pessoa" +
-                "\n4. Atualizar Quantidade" +
-                "\n9. Excluir");
+                "\n0. Cadastrar Código" +
+                "\n1. Consultar Reposição" +
+                "\n2. Atualizar Pessoa" +
+                "\n3. Atualizar Quantidade" +
+                "\n4. Excluir");
             ModificarOpcao = Convert.ToInt32(Console.ReadLine());
         }//fim do menu
 
@@ -40,24 +40,24 @@ namespace Livraria
             switch (ModificarOpcao)
             {
 
-                case 1:
+                case 0:
                     Console.WriteLine("Informe o Código: ");
                     long codigo = Convert.ToInt64(Console.ReadLine());
 
-                    Console.WriteLine("Informe o livro: ");
-                    string livro = Console.ReadLine();
+                    Console.WriteLine("30 Dias para Reposição");
+                    
 
-                    Console.WriteLine("Informe a pessoa: ");
-                    string pessoa = Console.ReadLine();
+                    Console.WriteLine("Sua Mercadoria Está Indisponivel no Momento ");
+                    
 
-                    Console.WriteLine("Informe a quantidade: ");
-                    string qtde = Console.ReadLine();
+                    Console.WriteLine("50 Livros está se encaminhando para reposição");
+                    Console.ReadLine();
 
                     //Chamar o método cadastrar
-                    model.Cadastrar(codigo, livro, pessoa, qtde);
+                    model.Cadastrar(codigo);
                     break;
 
-                case 2:
+                case 1:
                     Console.WriteLine("Informe o codigo que deseja consultar: ");
                     codigo = Convert.ToInt64(Console.ReadLine());
 
@@ -65,15 +65,27 @@ namespace Livraria
                     Console.WriteLine(model.ConsultarEstoque(codigo));
                     break;
 
-                case 3:
+                case 2:
                     Console.WriteLine("Informe o código: ");
                     codigo = Convert.ToInt64(Console.ReadLine());
 
                     Console.WriteLine("Informe o nome do livro: ");
-                    livro = Console.ReadLine();
+                    Console.ReadLine();
 
                     //Atualizar
-                    model.ConsultarLivro(codigo, livro);
+                    model.ConsultarReposicao(codigo);
+
+                    break;
+
+                case 3:
+                    Console.WriteLine("Informe o código: ");
+                    codigo = Convert.ToInt64(Console.ReadLine());
+
+                    Console.WriteLine("Informe o nome da pessoa: ");
+                    Console.ReadLine();
+
+                    //Atualizar
+                    model.ConsultarPessoa(codigo);
 
                     break;
 
@@ -81,23 +93,11 @@ namespace Livraria
                     Console.WriteLine("Informe o código: ");
                     codigo = Convert.ToInt64(Console.ReadLine());
 
-                    Console.WriteLine("Informe o nome da pessoa: ");
-                    pessoa = Console.ReadLine();
-
-                    //Atualizar
-                    model.ConsultarPessoa(codigo, pessoa);
-
-                    break;
-
-                case 5:
-                    Console.WriteLine("Informe o código: ");
-                    codigo = Convert.ToInt64(Console.ReadLine());
-
                     Console.WriteLine("Informe a quantidade: ");
-                    qtde = Console.ReadLine();
+                    Console.ReadLine();
 
                     //Atualizar
-                    model.VerificarQuantidade(codigo, qtde);
+                    model.VerificarQuantidade(codigo);
                     break;
 
                 default:

@@ -12,7 +12,7 @@ namespace Livraria
 
         //Encapsulamento = Deixar as variavéis privadas
         private long codigo;
-        private string livro;
+        private string reposicao;
         private string pessoa;
         private string qtde;
         
@@ -21,7 +21,7 @@ namespace Livraria
         public Reserva()
         {
             ModificarCodigo = 0;
-            ModificarLivro = "";
+            ModificarReposicao = "";
             ModificarPessoa = "";
             ModificarQtde = "";
             
@@ -35,10 +35,10 @@ namespace Livraria
 
         }//Fim do Modificar
 
-        public string ModificarLivro
+        public string ModificarReposicao
         {
-            get { return livro; }
-            set { this.livro = value; }
+            get { return reposicao; }
+            set { this.reposicao = value; }
 
         }//Fim do Modificar
 
@@ -58,11 +58,11 @@ namespace Livraria
 
 
         //Métodos - CRUD
-        public void Cadastrar(long codigo, string livro, string pessoa, string qtde)
+        public void Cadastrar(long codigo, string reposicao, string pessoa, string qtde)
         {
 
             ModificarCodigo = codigo;
-            ModificarLivro = livro;
+            ModificarReposicao = reposicao;
             ModificarPessoa = pessoa;
             ModificarQtde = qtde;
 
@@ -73,7 +73,7 @@ namespace Livraria
             string consulta = "";
             if (ModificarCodigo == codigo)
             {
-                consulta = "\nCodigo: " + ModificarCodigo + "\nLivro: " + ModificarLivro + "\nPessoa: " + ModificarPessoa + "\nQtde: " + ModificarQtde;
+                consulta = reposicao;
 
             }
             else
@@ -85,13 +85,13 @@ namespace Livraria
 
         }// Fim do Método
 
-        public void ConsultarLivro(long codigo, string livro)
+        public void ConsultarReposicao(long codigo, string reposicao)
         {
 
             if (ModificarCodigo == codigo)
             {
 
-                ModificarLivro = livro;
+                ModificarReposicao = reposicao;
 
             }
         }

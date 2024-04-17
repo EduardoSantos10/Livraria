@@ -9,61 +9,76 @@ namespace Livraria
     class Compra
     {
         //Encapsulamento = Deixar as variavéis privadas
-        private long codigo;
-        private string codigoPessoa;
-        private string codigoLivro;
-        private string codigoQuantidade;
-        private string total;
+        Pessoa pes;
+        Livro liv;
+        private long CPF;
+        private string nome;
+        private string livro;
+        private string quantidade;
+        private long pUnit;
+        private long pTotal;
 
         //Método Construtor
         public Compra()
         {
-            ModificarCodigo = 0;
-            ModificarCodigoPessoa = "";
-            ModificarCodigoLivro = "";
-            ModificarCodigoQuantidade = "";
-            ModificarTotal = "";
+            liv = new Livro();
+            pes = new Pessoa();
+            ModificarCPF = 0;
+            ModificarNome = "";
+            ModificarLivro = "";
+            ModificarQuantidade = "";
+            ModificarPunit = 0;
+            ModificarPtotal = 0;
            
         }// Fim do Construtor
 
         //Métodos Modificadores = Gets e Sets
-        public long ModificarCodigo
+        public long ModificarCPF
         {
-            get { return codigo; }
-            set { this.codigo = value; }
+            get { return CPF; }
+            set { this.CPF = value; }
 
         }//Fim do Modificar
 
-        public string ModificarCodigoPessoa
+        public string ModificarNome
         {
-            get { return codigoPessoa; }
-            set { this.codigoPessoa = value; }
+            get { return nome; }
+            set { this.nome = value; }
 
         }//Fim do Modificar
 
-        public string ModificarCodigoLivro
+        public string ModificarLivro
         {
-            get { return codigoLivro; }
-            set { this.codigoLivro = value; }
+            get { return livro; }
+            set { this.livro = value; }
 
         }//Fim do Modificar
 
-        public string ModificarCodigoQuantidade
+        public string ModificarQuantidade
         {
-            get { return codigoQuantidade; }
-            set { this.codigoQuantidade = value; }
+            get { return quantidade; }
+            set { this.quantidade = value; }
 
         }//Fim do Modificar
 
-        public string ModificarTotal
+        public long ModificarPunit
         {
-            get { return total; }
-            set { this.total = value; }
+            get { return pUnit; }
+            set { this.pUnit = value; }
 
         }//Fim do Modificar
+
+        public string ModificarPtotal 
+        { 
+        
+            get { return pTotal; }
+            set { this.pUnit = valeu; }
+        
+        
+        }
 
         //Métodos - CRUD
-        public void Cadastrar(long codigo, string codigoPessoa, string codigoLivro, string codigoQuantidade, string total)
+        public void Cadastrar(long codigo, string codigoPessoa, string codigoLivro, string codigoQuantidade, long total)
         {
 
             ModificarCodigo = codigo;
@@ -74,7 +89,7 @@ namespace Livraria
 
         }// Fim do Void
 
-        public string ConsultarIndividual(long codigo)
+        public string ConsultarCodigo(long codigo)
         {
             string consulta = "";
             if (ModificarCodigo == codigo)
@@ -124,7 +139,7 @@ namespace Livraria
             }
         }
 
-        public void AtualizarTotal(long codigo, string total)
+        public void AtualizarTotal(long codigo, long total)
         {
 
             if (ModificarCodigo == codigo)
@@ -140,7 +155,7 @@ namespace Livraria
             if (ModificarCodigo == codigo)
             {
 
-                ModificarTotal = "Inativo";
+                ModificarTotal = 0;
 
             }
         }//Fim do Método
